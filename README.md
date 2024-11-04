@@ -1,4 +1,4 @@
-# Building a knowledge base with Amazon Bedrock
+# Building a Knowledge Base with Amazon Bedrock
 
 ## Table of Contents
 
@@ -18,31 +18,30 @@
 12. [Source](#source)
 
 ## Introduction
-If we're keeping things a buck, I actually started experimenting with different ideas a couple months ago. I was studying for a course and I had a light bulb moment, "what if I implement my own chat-with-documents app"
+I started experimenting with different ideas a couple of months ago. While studying for a course, I had a light bulb moment: "What if I implement my own chat-with-documents app?"
 
-I've used quite a few of these apps and they're amazing! I am able to generate questions based on a particular section/topic. It's pretty cool
+I've used quite a few of these apps, and they're amazing! I can generate questions based on a particular section or topic. It's pretty cool 🤯
 
-I sat back at the drawing board--I remembered reading an article about Amazon Bedrock some months back and I thought hmm let's explore. I wanted to build my own application but the purpose of my exploration was to build fast. So I looked to see if it had been done before--and you bet it had! When using new tech or whatever the case may be, I like putting my own little spin on it
-
+I sat back at the drawing board and remembered reading an article about Amazon Bedrock some months back. I thought, "Hmm, let's explore." I wanted to build my own application, but the purpose of my exploration was to build fast. So I looked to see if it had been done before—and you bet it had! When using new tech or whatever the case may be, I like putting my own little spin on it.
 
 ## Key Features
 
--  AI-powered chat using Anthropic's Claude model
--  Amazon Bedrock integration for contextual knowledge retrieval
--  Real-time thinking & debug information display
--  Knowledge base source visualization
--  User mood detection & appropriate agent redirection
--  Highly customizable UI with shadcn/ui components
+- AI-powered chat using Anthropic's Claude model
+- Amazon Bedrock integration for contextual knowledge retrieval
+- Real-time thinking & debug information display
+- Knowledge base source visualization
+- User mood detection & appropriate agent redirection
+- Highly customizable UI with shadcn/ui components
+- Deployed on vercel!
 
-##  Getting Started
+## Getting Started
 
-1. Clone this repository
+1. Clone this repository.
 2. Install dependencies: `npm install`
-3. Set up your environment variables (see Configuration section)
+3. Set up your environment variables (see Configuration section).
 4. Run the development server: `npm run dev`
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Source
 
-This project is based on code from [Anthropic Samples](https://github.com/anthropics/anthropic-quickstarts)
-
+This project is based on code from [Anthropic Samples](https://github.com/anthropics/anthropic-quickstarts).
