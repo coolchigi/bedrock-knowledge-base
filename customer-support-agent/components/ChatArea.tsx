@@ -13,7 +13,7 @@ import {
   LifeBuoyIcon,
   BookOpenText,
   ChevronDown,
-  Send,
+  Send
 } from "lucide-react";
 import "highlight.js/styles/atom-one-dark.css";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -23,7 +23,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
 const TypedText = ({ text = "", delay = 5 }) => {
@@ -56,7 +56,7 @@ interface ConversationHeaderProps {
 }
 
 const UISelector = ({
-  redirectToAgent,
+  redirectToAgent
 }: {
   redirectToAgent: { should_redirect: boolean; reason: string };
 }) => {
@@ -71,8 +71,8 @@ const UISelector = ({
             detail: {
               reason: redirectToAgent.reason || "Unknown",
               mood: "frustrated",
-              timestamp: new Date().toISOString(),
-            },
+              timestamp: new Date().toISOString()
+            }
           });
           window.dispatchEvent(event);
         }}
@@ -89,7 +89,7 @@ const UISelector = ({
 const SuggestedQuestions = ({
   questions,
   onQuestionClick,
-  isLoading,
+  isLoading
 }: {
   questions: string[];
   onQuestionClick: (question: string) => void;
@@ -117,7 +117,7 @@ const SuggestedQuestions = ({
 
 const MessageContent = ({
   content,
-  role,
+  role
 }: {
   content: string;
   role: string;
@@ -225,7 +225,7 @@ const ConversationHeader: React.FC<ConversationHeaderProps> = ({
   showAvatar,
   selectedKnowledgeBase,
   setSelectedKnowledgeBase,
-  knowledgeBases,
+  knowledgeBases
 }) => (
   <div className="p-0 flex flex-col sm:flex-row items-start sm:items-center justify-between pb-2 animate-fade-in">
     <div className="flex items-center space-x-4 mb-2 sm:mb-0">
@@ -307,17 +307,18 @@ function ChatArea() {
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [selectedKnowledgeBase, setSelectedKnowledgeBase] = useState(
-    "your-knowledge-base-id",
+    "your-knowledge-base-id"
   );
 
   const knowledgeBases: KnowledgeBase[] = [
-    { id: "your-knowledge-base-id", name: "Your KB Name" },
+    { id: "your-knowledge-base-id", name: "Your KB Name" }
     // Add more knowledge bases as needed
   ];
 
   const models: Model[] = [
     { id: "claude-3-haiku-20240307", name: "Claude 3 Haiku" },
     { id: "claude-3-5-sonnet-20240620", name: "Claude 3.5 Sonnet" },
+    { id: "claude-3-opus-20240229", name: "Claude 3 Opus" }
   ];
 
   const scrollToBottom = () => {
@@ -352,12 +353,12 @@ function ChatArea() {
 
       window.addEventListener(
         "updateSidebar" as any,
-        handleUpdateSidebar as EventListener,
+        handleUpdateSidebar as EventListener
       );
       return () =>
         window.removeEventListener(
           "updateSidebar" as any,
-          handleUpdateSidebar as EventListener,
+          handleUpdateSidebar as EventListener
         );
     }
   }, []);
@@ -372,12 +373,12 @@ function ChatArea() {
 
       window.addEventListener(
         "updateRagSources" as any,
-        handleUpdateRagSources as EventListener,
+        handleUpdateRagSources as EventListener
       );
       return () =>
         window.removeEventListener(
           "updateRagSources" as any,
-          handleUpdateRagSources as EventListener,
+          handleUpdateRagSources as EventListener
         );
     }
   }, []);
@@ -399,7 +400,7 @@ function ChatArea() {
   };
 
   const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement> | string,
+    event: React.FormEvent<HTMLFormElement> | string
   ) => {
     if (typeof event !== "string") {
       event.preventDefault();
@@ -414,7 +415,7 @@ function ChatArea() {
     const userMessage = {
       id: crypto.randomUUID(),
       role: "user",
-      content: typeof event === "string" ? event : input,
+      content: typeof event === "string" ? event : input
     };
 
     const placeholderMessage = {
@@ -425,15 +426,15 @@ function ChatArea() {
         thinking: "AI is processing...",
         user_mood: "neutral",
         debug: {
-          context_used: false,
-        },
-      }),
+          context_used: false
+        }
+      })
     };
 
     setMessages((prevMessages) => [
       ...prevMessages,
       userMessage,
-      placeholderMessage,
+      placeholderMessage
     ]);
     setInput("");
 
@@ -449,8 +450,8 @@ function ChatArea() {
         body: JSON.stringify({
           messages: [...messages, userMessage],
           model: selectedModel,
-          knowledgeBaseId: selectedKnowledgeBase,
-        }),
+          knowledgeBaseId: selectedKnowledgeBase
+        })
       });
 
       const responseReceived = performance.now();
@@ -470,7 +471,7 @@ function ChatArea() {
       console.log("⬅️ Received response from API:", data);
 
       const suggestedQuestionsHeader = response.headers.get(
-        "x-suggested-questions",
+        "x-suggested-questions"
       );
       if (suggestedQuestionsHeader) {
         data.suggested_questions = JSON.parse(suggestedQuestionsHeader);
@@ -481,7 +482,7 @@ function ChatArea() {
         const ragProcessed = performance.now();
         logDuration(
           "🔍 RAG Processing Duration",
-          ragProcessed - responseReceived,
+          ragProcessed - responseReceived
         );
         const sources = JSON.parse(ragHeader);
         window.dispatchEvent(
@@ -489,9 +490,9 @@ function ChatArea() {
             detail: {
               sources,
               query: userMessage.content,
-              debug: data.debug,
-            },
-          }),
+              debug: data.debug
+            }
+          })
         );
       }
 
@@ -504,7 +505,7 @@ function ChatArea() {
         newMessages[lastIndex] = {
           id: crypto.randomUUID(),
           role: "assistant",
-          content: JSON.stringify(data),
+          content: JSON.stringify(data)
         };
         return newMessages;
       });
@@ -515,16 +516,16 @@ function ChatArea() {
           content: data.thinking?.trim(),
           user_mood: data.user_mood,
           debug: data.debug,
-          matched_categories: data.matched_categories,
-        },
+          matched_categories: data.matched_categories
+        }
       });
       window.dispatchEvent(sidebarEvent);
 
       if (data.redirect_to_agent && data.redirect_to_agent.should_redirect) {
         window.dispatchEvent(
           new CustomEvent("agentRedirectRequested", {
-            detail: data.redirect_to_agent,
-          }),
+            detail: data.redirect_to_agent
+          })
         );
       }
     } catch (error) {
@@ -633,7 +634,7 @@ function ChatArea() {
                     }`}
                     style={{
                       animationDuration: "300ms",
-                      animationFillMode: "backwards",
+                      animationFillMode: "backwards"
                     }}
                   >
                     {message.role === "assistant" && (
