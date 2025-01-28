@@ -10,7 +10,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
 const themeColors = {
@@ -21,28 +21,37 @@ const themeColors = {
   tangerine: "#F97316",
   emerald: "#10B981",
   amber: "#F59E0B",
+  pink: "#DB7093",
+  cyan: "#00FFFF"
 } as const;
 
 type ThemeName = keyof typeof themes;
 
 const ColorCircle = ({
   themeName,
-  isSelected,
+  isSelected
 }: {
   themeName: ThemeName;
   isSelected: boolean;
-}) => (
-  <div
-    className="relative border flex h-4 w-4 shrink-0 items-center justify-center rounded-full"
-    style={{ backgroundColor: themeColors[themeName] }}
-  >
-    {isSelected && (
-      <div className="absolute inset-0 flex items-center justify-center">
-        <Check className="text-white" size={12} />
-      </div>
-    )}
-  </div>
-);
+}) => {
+  console.log(
+    `ColorCircle render - Theme: ${themeName}, Selected: ${isSelected}`
+  );
+  console.log("Applied color:", themeColors[themeName]);
+
+  return (
+    <div
+      className="relative border flex h-4 w-4 shrink-0 items-center justify-center rounded-full"
+      style={{ backgroundColor: themeColors[themeName] }}
+    >
+      {isSelected && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Check className="text-white" size={12} />
+        </div>
+      )}
+    </div>
+  );
+};
 
 const TopNavBar = () => {
   const { theme, setTheme } = useTheme();
@@ -63,12 +72,19 @@ const TopNavBar = () => {
       ? themes[newColorTheme].dark
       : themes[newColorTheme].light;
 
+    console.log(`Applying theme: ${newColorTheme}, Dark mode: ${isDark}`);
+    console.log("Theme variables:", themeVariables);
+
     Object.entries(themeVariables).forEach(([key, value]) => {
       root.style.setProperty(`--${key}`, value as string);
     });
   };
 
   const handleThemeChange = (newColorTheme: ThemeName) => {
+    console.log("Previous theme:", colorTheme);
+    console.log("New theme:", newColorTheme);
+    console.log("Theme color value:", themeColors[newColorTheme]);
+
     setColorTheme(newColorTheme);
     localStorage.setItem("color-theme", newColorTheme);
     applyTheme(newColorTheme, theme === "dark");

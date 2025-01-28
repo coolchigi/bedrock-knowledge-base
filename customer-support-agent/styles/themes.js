@@ -27,7 +27,7 @@ export const themes = {
       "chart-2": "173 58% 39%",
       "chart-3": "197 37% 24%",
       "chart-4": "43 74% 66%",
-      "chart-5": "27 87% 67%",
+      "chart-5": "27 87% 67%"
     },
     dark: {
       background: "0 0% 3.9%",
@@ -54,8 +54,8 @@ export const themes = {
       "chart-2": "160 60% 45%",
       "chart-3": "30 80% 55%",
       "chart-4": "280 65% 60%",
-      "chart-5": "340 75% 55%",
-    },
+      "chart-5": "340 75% 55%"
+    }
   },
   red: {
     light: {
@@ -83,7 +83,7 @@ export const themes = {
       "chart-2": "173 58% 39%",
       "chart-3": "197 37% 24%",
       "chart-4": "43 74% 66%",
-      "chart-5": "27 87% 67%",
+      "chart-5": "27 87% 67%"
     },
     dark: {
       background: "0 0% 3.9%",
@@ -110,8 +110,8 @@ export const themes = {
       "chart-2": "160 60% 45%",
       "chart-3": "30 80% 55%",
       "chart-4": "280 65% 60%",
-      "chart-5": "340 75% 55%",
-    },
+      "chart-5": "340 75% 55%"
+    }
   },
   violet: {
     light: {
@@ -139,7 +139,7 @@ export const themes = {
       "chart-2": "173 58% 39%",
       "chart-3": "197 37% 24%",
       "chart-4": "43 74% 66%",
-      "chart-5": "27 87% 67%",
+      "chart-5": "27 87% 67%"
     },
     dark: {
       background: "224 71.4% 4.1%",
@@ -166,8 +166,8 @@ export const themes = {
       "chart-2": "160 60% 45%",
       "chart-3": "30 80% 55%",
       "chart-4": "280 65% 60%",
-      "chart-5": "340 75% 55%",
-    },
+      "chart-5": "340 75% 55%"
+    }
   },
   blue: {
     light: {
@@ -195,7 +195,7 @@ export const themes = {
       "chart-2": "173 58% 39%",
       "chart-3": "197 37% 24%",
       "chart-4": "43 74% 66%",
-      "chart-5": "27 87% 67%",
+      "chart-5": "27 87% 67%"
     },
     dark: {
       background: "222.2 84% 4.9%",
@@ -221,8 +221,8 @@ export const themes = {
       "chart-2": "160 60% 45%",
       "chart-3": "30 80% 55%",
       "chart-4": "280 65% 60%",
-      "chart-5": "340 75% 55%",
-    },
+      "chart-5": "340 75% 55%"
+    }
   },
   tangerine: {
     light: {
@@ -250,7 +250,7 @@ export const themes = {
       "chart-2": "173 58% 39%",
       "chart-3": "197 37% 24%",
       "chart-4": "43 74% 66%",
-      "chart-5": "27 87% 67%",
+      "chart-5": "27 87% 67%"
     },
     dark: {
       background: "20 14.3% 4.1%",
@@ -276,8 +276,8 @@ export const themes = {
       "chart-2": "160 60% 45%",
       "chart-3": "30 80% 55%",
       "chart-4": "280 65% 60%",
-      "chart-5": "340 75% 55%",
-    },
+      "chart-5": "340 75% 55%"
+    }
   },
   emerald: {
     light: {
@@ -305,7 +305,7 @@ export const themes = {
       "chart-2": "173 58% 39%",
       "chart-3": "197 37% 24%",
       "chart-4": "43 74% 66%",
-      "chart-5": "27 87% 67%",
+      "chart-5": "27 87% 67%"
     },
     dark: {
       background: "20 14.3% 4.1%",
@@ -331,8 +331,19 @@ export const themes = {
       "chart-2": "160 60% 45%",
       "chart-3": "30 80% 55%",
       "chart-4": "280 65% 60%",
-      "chart-5": "340 75% 55%",
+      "chart-5": "340 75% 55%"
+    }
+  },
+  pink: {
+    light: {
+      primary: "340 82% 52%", 
+      secondary: "340 82% 52%"
     },
+    dark: {
+      primary: "340 82% 52%",
+      secondary: "340 82% 52%",
+      accent: "340 82% 52%"
+    }
   },
   amber: {
     light: {
@@ -360,7 +371,7 @@ export const themes = {
       "chart-2": "173 58% 39%",
       "chart-3": "197 37% 24%",
       "chart-4": "43 74% 66%",
-      "chart-5": "27 87% 67%",
+      "chart-5": "27 87% 67%"
     },
     dark: {
       background: "20 14.3% 4.1%",
@@ -386,7 +397,7 @@ export const themes = {
       "chart-2": "160 60% 45%",
       "chart-3": "30 80% 55%",
       "chart-4": "280 65% 60%",
-      "chart-5": "340 75% 55%",
-    },
-  },
+      "chart-5": "340 75% 55%"
+    }
+  }
 };
