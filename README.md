@@ -18,21 +18,58 @@
 12. [Source](#source)
 
 ## Introduction
-I started experimenting with different ideas a couple of months ago. While studying for a course, I had a light bulb moment: "What if I implement my own chat-with-documents app?"
 
-I've used quite a few of these apps, and they're amazing! I can generate questions based on a particular section or topic. It's pretty cool 🤯
+RAG is a very common term in the AI world. It has become the buzz word at this point. When ChatGPT was introduced, LLMs were the buzz word. Now, it's RAG this, RAG that. What exactly is it? RAG stands for Retrieval Augmented Generation. It's a way to provide private context to LLMs. Common examples are those "help bots" you see on a company's webpage.
 
-I sat back at the drawing board and remembered reading an article about Amazon Bedrock some months back. I thought, "Hmm, let's explore." I wanted to build my own application, but the purpose of my exploration was to build fast. So I looked to see if it had been done before—and you bet it had! When using new tech or whatever the case may be, I like putting my own little spin on it.
+I've used quite a few apps that use RAG, and they're amazing! I can essentially chat with my PDFs, ask questions, and get answers. Google NotebookLM takes this to a whole new level! You can generate audio in a podcast style where two presenters discuss the PDFs or sources. I've always wanted to build one of these, but I never had the time to do so. This is for learning purposes, so I decided to leverage an existing app and maybe add a few tweaks here and there. My approach is, I am following the guide in the official repo and augumenting it with my knowledge or experience as I build. There's also a mini-challenge section that will help you understand the codebase better.
 
 ## Key Features
 
-- AI-powered chat using Anthropic's Claude model
+- AI-powered chat using Anthropic's Claude model & any model of your choice
 - Amazon Bedrock integration for contextual knowledge retrieval
 - Real-time thinking & debug information display
 - Knowledge base source visualization
 - User mood detection & appropriate agent redirection
 - Highly customizable UI with shadcn/ui components
 - Deployed on vercel!
+
+## Mini-Challenge
+
+### 1. UI Enhancement - Theme Management (Beginner)
+
+**Task:** Add new themes to the UI
+**Problem:** The dropdown menu becomes unwieldy with many themes
+**Challenge:** Implement a scrollable or paginated theme selector
+**Files to explore:**
+
+- `components/TopNavBar.tsx`
+- `styles/themes.js`
+
+### 2. Source Attribution (Intermediate)
+
+**Task:** Add source references to retrieved data
+**Goal:** Show where the information comes from
+**Suggestions:**
+
+- Add line numbers
+- Include file names
+- Show context snippets
+  **Files to explore:**
+- `pages/api/chat.ts`
+- `lib/bedrock.ts`
+
+### 3. Advanced Features (Expert)
+
+**Task:** Choose one:
+
+- Implement chat history persistence
+- Add support for multiple knowledge bases
+- Create a custom theme builder
+
+### Tips 💡
+
+- Use the browser console to debug theme changes
+- Review AWS Bedrock documentation for RAG implementation details
 
 ## Getting Started
 
