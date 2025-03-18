@@ -4,18 +4,9 @@
 
 1. [Introduction](#introduction)
 2. [Key Features](#key-features)
-3. [Getting Started](#getting-started)
-4. [Configuration](#configuration)
-5. [How to Get Your Keys](#how-to-get-your-keys)
-   - [Anthropic API Key](#anthropic-api-key)
-   - [AWS Access Key and Secret Key](#aws-access-key-and-secret-key)
-6. [Amazon Bedrock RAG Integration](#amazon-bedrock-rag-integration)
-7. [Service Role](#service-role)
-8. [Customized Deployment and Development](#customized-deployment-and-development)
-9. [NPM Scripts](#npm-scripts)
-10. [Appendix](#appendix)
-11. [Disclaimer](#disclaimer)
-12. [Source](#source)
+3. [Mini-Challenge](#mini-challenge)
+4. [Getting Started](#getting-started)
+5. [Source](#source)
 
 ## Introduction
 
@@ -78,6 +69,8 @@ I've used quite a few apps that use RAG, and they're amazing! I can essentially 
 3. Set up your environment variables (see Configuration section).
 4. Run the development server: `npm run dev`
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+For subsequent steps, I recommend following the steps outlined in the repo listed under the source section. There's no point re-writing the same steps here. I will go through the steps myself and probably augument it with my own experience.
 
 ## Source
 
