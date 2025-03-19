@@ -29,8 +29,11 @@ I've used quite a few apps that use RAG, and they're amazing! I can essentially 
 ### 1. UI Enhancement - Theme Management (Beginner)
 
 **Task:** Add new themes to the UI
+
 **Problem:** The dropdown menu becomes unwieldy with many themes
+
 **Challenge:** Implement a scrollable or paginated theme selector
+
 **Files to explore:**
 
 - `components/TopNavBar.tsx`
@@ -40,8 +43,8 @@ I've used quite a few apps that use RAG, and they're amazing! I can essentially 
 
 **Task:** Add source references to retrieved data
 **Goal:** Show where the information comes from
-**Suggestions:**
 
+**Suggestions:**
 - Add line numbers
 - Include file names
 - Show context snippets
